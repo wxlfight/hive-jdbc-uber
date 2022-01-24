@@ -94,7 +94,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 public class HiveConnection implements java.sql.Connection {
   public static final Log LOG = LogFactory.getLog(HiveConnection.class.getName());
   Logger logger = Logger.getLogger(HiveConnection.class.getName());
-  FileHandler fh;
+//  FileHandler fh;
   private static final String HIVE_VAR_PREFIX = "hivevar:";
   private static final String HIVE_CONF_PREFIX = "hiveconf:";
 
@@ -187,16 +187,16 @@ public class HiveConnection implements java.sql.Connection {
     client = newSynchronizedClient(client);
 
     //just to make our log file nicer :)
-    SimpleDateFormat format = new SimpleDateFormat("M-d_HHmmss");
-    try {
-      fh = new FileHandler("/tmp/hive_jdbc_"
-              + format.format(Calendar.getInstance().getTime()) + ".log");
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    fh.setFormatter(new SimpleFormatter());
-    logger.addHandler(fh);
+//    SimpleDateFormat format = new SimpleDateFormat("M-d_HHmmss");
+//    try {
+//      fh = new FileHandler("/tmp/hive_jdbc_"
+//              + format.format(Calendar.getInstance().getTime()) + ".log");
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//    }
+//
+//    fh.setFormatter(new SimpleFormatter());
+//    logger.addHandler(fh);
   }
 
   private void openTransport() throws SQLException {
